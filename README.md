@@ -16,3 +16,32 @@ Or install it yourself as:
 
     $ gem install formulae_ruby
 
+
+## Usage
+
+### Forms
+
+- Get all Forms
+
+```ruby
+FormulaeRuby::FormClient.all
+```
+
+- Get a Specific Form
+
+```ruby
+FormulaeRuby::FormClient.get(1)
+```
+
+
+## Configuration
+
+- `BASE_URL` environment variable as default Api Base Url.
+
+## Tests
+
+
+```sh
+bundle exec rspec
+```
+

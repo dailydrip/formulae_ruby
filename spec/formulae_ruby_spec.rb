@@ -1,11 +1,19 @@
 require 'spec_helper'
 
 RSpec.describe FormulaeRuby do
-  it 'has a version number' do
-    expect(FormulaeRuby::VERSION).not_to be nil
+  describe 'version' do
+    it 'has a version number' do
+      expect(FormulaeRuby::VERSION).not_to be nil
+    end
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe 'forms' do
+    it 'Getting All the Forms' do
+      FormulaeRuby::FormClient.all
+    end
+
+    it 'Getting a Specific Form' do
+      FormulaeRuby::FormClient.get(1)
+    end
   end
 end
