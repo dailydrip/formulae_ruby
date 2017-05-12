@@ -9,11 +9,11 @@ RSpec.describe FormulaeRuby do
 
   describe 'forms' do
     it 'Getting All the Forms' do
-      FormulaeRuby::FormClient.all
+      FormulaeRuby::FormClient.new(application_id: 1).all
     end
 
     it 'Getting a Specific Form' do
-      FormulaeRuby::FormClient.get(1)
+      FormulaeRuby::FormClient.new(application_id: 1).find(1)
     end
   end
 end

@@ -1,0 +1,190 @@
+# see https://github.com/bbatsov/rubocop#configuration
+# for info on how to configure rubocop
+# see https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+# for default configuration
+
+AllCops:
+  TargetRubyVersion: 2.4.1
+  Exclude:
+    - vendor/**/*
+    - db/schema.rb
+    - spec/support/create_seed_topics_and_drips_service.rb
+    - lib/tasks/subscription_reconciliation.rake
+    - config/routes.rb
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 80
+  # Enabled: false
+
+Metrics/ModuleLength:
+  Max: 500
+  # Enabled: false
+
+Metrics/PerceivedComplexity:
+  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Metrics/PerceivedComplexity
+  Max: 13
+
+Style/RedundantReturn:
+  Enabled: false
+
+# FIXME
+Style/VariableName:
+  Enabled: false
+
+# FIXME
+Style/GuardClause:
+  Enabled: false
+
+# FIXME
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+# FIXME
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# FIXME
+Style/AccessorMethodName:
+  Enabled: false
+
+# FIXME
+Style/ClassAndModuleCamelCase:
+  Enabled: false
+
+# FIXME
+Metrics/ClassLength:
+  Max: 250
+
+Metrics/ParameterLists:
+    Enabled: false
+
+# FIXME
+Style/RedundantSelf:
+  Enabled: false
+
+# FIXME
+Style/EachWithObject:
+  Enabled: false
+
+# FIXME
+Style/Lambda:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/IdenticalConditionalBranches:
+  Enabled: false
+
+Style/DefWithParentheses:
+  Enabled: false
+
+# FIXME
+Rails/Exit:
+  Enabled: false
+
+# FIXME
+Rails/OutputSafety:
+  Enabled: false
+
+# FIXME
+Rails/Output:
+  Enabled: false
+
+# FIXME
+Lint/DefEndAlignment:
+  Enabled: false
+
+# FIXME
+Lint/EndAlignment:
+  Enabled: false
+
+# FIXME
+Lint/Loop:
+  Enabled: false
+
+# FIXME
+Lint/UselessAssignment:
+  Enabled: false
+
+# FIXME
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+
+# FIXME
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Rails/Date:
+  # The value `always` disallows usage of `Date.today`, `Date.current`,
+  # `Date#to_time` etc.
+  # The value `acceptable` allows usage of `Date.current`, `Date.yesterday`, etc
+  # (but not `Date.today`) which are overriden by ActiveSupport to handle current
+  # time zone.
+  Enabled: false
+  # EnforcedStyle: flexible
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+# FIXME
+Lint/RescueException:
+  Enabled: false
+
+# FIXME
+Lint/HandleExceptions:
+  Enabled: false
+
+Style/CommandLiteral:
+  Description: 'Use `` or %x around command literals.'
+  Enabled: false
+
+Rails/TimeZone:
+ # The value `always` means that `Time` should be used with `zone`.
+ # The value `acceptable` allows usage of `in_time_zone` instead of `zone`.
+ Enabled: false
+ # EnforcedStyle: flexible
+
+# FIXME
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

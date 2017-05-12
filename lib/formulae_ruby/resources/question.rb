@@ -3,10 +3,10 @@ module FormulaeRuby
     attr_accessor :id, :key, :label, :order, :content
 
     def initialize(json)
-      encodeQuestion(json)
+      encode_question(json)
     end
 
-    private def encodeQuestion(json)
+    private def encode_question(json)
       self.id = json['id']
       self.key = json['key']
       self.label = json['label']
