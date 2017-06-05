@@ -3,10 +3,10 @@ module FormulaeRuby
     attr_accessor :id, :application_id, :sections, :questions
 
     def initialize(json)
-      encode_form(json)
+      decode_form(json)
     end
 
-    private def encode_form(json)
+    private def decode_form(json)
       self.id = json['id']
       self.application_id = json['application']['id']
       self.sections = add_sections(json)
