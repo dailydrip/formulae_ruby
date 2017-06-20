@@ -14,3 +14,9 @@ require 'formulae_ruby/resources/section'
 
 # Question
 require 'formulae_ruby/resources/question'
+
+# QuestionDependency
+require 'formulae_ruby/resources/question_dependency'
+
+# Choice
+require 'formulae_ruby/resources/choice'

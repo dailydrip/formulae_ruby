@@ -16,9 +16,9 @@ RSpec.describe FormulaeRuby::FormClient do
       form = form_client.find(id)
       expect(form.id).to eq 1
       expect(form.application_id).to eq 1
-      # FIXME
-      # Test sections
-      # Test questions
+      # FIXME: Use vcr here
+      expect(!form.questions.empty?).to be_truthy
+      expect(!form.sections.empty?).to be_truthy
     end
   end
 end
