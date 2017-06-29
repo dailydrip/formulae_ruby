@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe FormulaeRuby::FormClient do
-  let(:base_client) { FormulaeRuby::BaseClient.new(application_id: 1) }
+  let(:base_client) do
+    FormulaeRuby::BaseClient.new(api_key: '810cb082-1beb-4cb4-9f78-baeb330a42c5')
+  end
 
   describe '#post' do
     it 'does something useful' do

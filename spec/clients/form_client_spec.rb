@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe FormulaeRuby::FormClient do
-  let(:form_client) { FormulaeRuby::FormClient.new(application_id: 1) }
+  let(:form_client) do
+    FormulaeRuby::FormClient.new(api_key: '810cb082-1beb-4cb4-9f78-baeb330a42c5')
+  end
 
   describe '#all' do
     it 'does something useful' do
       forms = form_client.all
-      puts forms.inspect
     end
   end
 
