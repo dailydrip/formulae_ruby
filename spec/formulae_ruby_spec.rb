@@ -8,12 +8,13 @@ RSpec.describe FormulaeRuby do
   end
 
   describe 'forms' do
+    let(:api_key) { '810cb082-1beb-4cb4-9f78-baeb330a42c5' }
     it 'Getting All the Forms' do
-      FormulaeRuby::FormClient.new(application_id: 1).all
+      FormulaeRuby::FormClient.new(api_key: api_key).all
     end
 
     it 'Getting a Specific Form' do
-      FormulaeRuby::FormClient.new(application_id: 1).find(1)
+      FormulaeRuby::FormClient.new(api_key: api_key).find(1)
     end
   end
 end

@@ -24,13 +24,13 @@ Or install it yourself as:
 - Get all Forms
 
 ```ruby
-FormulaeRuby::FormClient.new(application_id: 1).all
+FormulaeRuby::FormClient.new(api_key: 'API_KEY').all
 ```
 
 - Get a Specific Form
 
 ```ruby
-FormulaeRuby::FormClient.new(application_id: 1).find(1)
+FormulaeRuby::FormClient.new(api_key: 'API_KEY').find(1)
 ```
 
 

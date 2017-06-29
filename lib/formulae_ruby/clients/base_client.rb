@@ -3,7 +3,7 @@ require 'faraday_middleware'
 module FormulaeRuby
   class BaseClient
     def initialize(options = {})
-      @application_id = options[:application_id]
+      @api_key = options[:api_key]
     end
 
     def post(path, _headers = {})
@@ -14,8 +14,14 @@ module FormulaeRuby
       connection.get(path)
     end
 
+    private def headers
+      {
+        Authorization: "Bearer #{@api_key}"
+      }
+    end
+
     private def connection
-      Faraday.new(url: Config.base_url) do |builder|
+      Faraday.new(url: Config.base_url, headers: headers) do |builder|
         builder.request  :json
         builder.response :json, content_type: 'application/json'
         builder.adapter  :net_http
