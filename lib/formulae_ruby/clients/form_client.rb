@@ -7,7 +7,7 @@ module FormulaeRuby
     def all
       [].tap do |f|
         response = get('forms/')
-        response_forms = response.body
+        response_forms = JSONConverter.to_hash(response.body)
         response_forms.each do |form|
           f << Form.new(form)
         end
@@ -16,7 +16,8 @@ module FormulaeRuby
 
     def find(id)
       response = get("forms/#{id}")
-      Form.new(response.body)
+      hash = JSONConverter.to_hash(response.body)
+      Form.new(hash)
     end
   end
 end
