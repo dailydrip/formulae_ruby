@@ -16,14 +16,14 @@ module FormulaeRuby
 
     private def headers
       {
-        Authorization: "Bearer #{@api_key}"
+        Authorization: "Bearer #{@api_key}",
+        'Content-Type' => 'application/json'
       }
     end
 
     private def connection
       Faraday.new(url: Config.base_url, headers: headers) do |builder|
         builder.request  :json
-        builder.response :json, content_type: 'application/json'
         builder.adapter  :net_http
       end
     end

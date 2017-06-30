@@ -4,6 +4,7 @@ require 'faraday'
 require 'formulae_ruby/version'
 require 'formulae_ruby/config'
 require 'formulae_ruby/clients/base_client'
+require 'formulae_ruby/json_converter'
 
 # Form
 require 'formulae_ruby/resources/form'
